@@ -1,0 +1,122 @@
+body.modal-opened {
+    overflow: hidden;
+}
+
+.modal-window,
+.modal-overlay {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.2s ease;
+}
+
+.modal {
+    transition: 0.2s ease;
+    padding: 50px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    .modal-window {
+        border-radius: 5px;
+        padding: 20px;
+        background-color: #fff;
+        transition: inherit;
+        max-height: 100%;
+        max-width: 500px;
+        width: 100%;
+        overflow: auto;
+        position: relative;
+    }
+
+    &.modal-animation-slideDown {
+        .modal-window {
+            transform: translateY(-100px);
+        }
+    }
+
+    &.modal-animation-slideUp {
+        .modal-window {
+            transform: translateY(100px);
+        }
+    }
+
+    &.modal-animation-scale {
+        .modal-window {
+            transform: scale(0.3);
+        }
+    }
+
+    &.modal-position-center {
+        align-items: center;
+    }
+
+    &.modal-position-top {
+        align-items: flex-start;
+    }
+
+    &.modal-position-bottom {
+        align-items: flex-end;
+    }
+
+    &.open {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1001;
+
+        .modal-window {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0.2s;
+        }
+
+        &.modal-animation-slideDown,
+        &.modal-animation-slideUp {
+            .modal-window {
+                transform: translateY(0);
+            }
+        }
+
+        &.modal-animation-scale {
+            .modal-window {
+                transform: scale(1);
+            }
+        }
+
+        & ~ .modal-overlay {
+            opacity: 1;
+            visibility: visible;
+            z-index: 1000;
+        }
+    }
+
+    &.hiding {
+        & ~ .modal-overlay {
+            transition-delay: 0.2s;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .modal {
+        padding: 50px 16px;
+    }
+
+    .modal-window {
+        width: 100%;
+    }
+}
