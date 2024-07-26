@@ -1,6 +1,6 @@
 {
     "name": "vy-modal-library",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A simple and effective modal library for web applications",
     "main": "dist/modal.min.js",
     "style": "dist/modal.min.css",
