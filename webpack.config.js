@@ -15,6 +15,7 @@ const config = {
     output: {
         path: path.resolve(__dirname, distPath),
         filename: `${outputJsName}`,
+        libraryTarget: 'umd',
         clean: true
     },
     resolve: {
