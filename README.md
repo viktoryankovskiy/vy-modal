@@ -10,6 +10,7 @@ const modal = Modal({
     targetClose: ".close-modal",
     animation: "fade",
     position: "center",
+    modalClassName: "custom-class",
     content: <div>content<div>
 });
 ```
