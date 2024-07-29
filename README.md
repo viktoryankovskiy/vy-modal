@@ -14,10 +14,13 @@ const modal = Modal({
     content: <div>content<div>
 });
 ```
-Available Options
-
-Animations: ["fade", "slideDown", "slideUp", "scale"] </br>
-Positions: ["top", "center", "bottom"]
+Available Options:</br>
+targetOpen: set a class that will open modal when clicked</br>
+targetClose: set a class that will close modal when clicked</br>
+animation: ["fade", "slideDown", "slideUp", "scale"] </br>
+position: ["top", "center", "bottom"]
+modalClassName: modal custom class,
+content: modal content
 
 Open:</br>
 ```javascript
