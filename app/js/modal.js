@@ -202,6 +202,7 @@
             on: (eventName, cb) => modalEventHandler(options, eventName, cb, "on"),
             off: (eventName, cb) =>
                 modalEventHandler(options, eventName, cb, "off"),
+            setContent: (content) => { options.content = content },
         };
     };
     window.Modal = Modal;
